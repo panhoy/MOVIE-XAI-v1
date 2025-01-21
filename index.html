@@ -3,272 +3,547 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="/css/style.css"> -->
-  <title>Movies anime</title>
+  <title>Thourn Panha </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Global Styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #FFFFFF;
-}
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        color: #333;
 
-/* Navbar Styles */
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #353232;
-  padding: 10px 20px;
-}
+    }
 
-.navbar .logo {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-}
+    .container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
+    
+        
+    }
 
-.navbar ul li {
-  margin: 0 15px;
-}
+    .left-panel {
+        background-color: #1f1d1d;
+        color: #fff;
+        width: 35%;
+      
+        text-align: center;
+    }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 30px;
-  transition: color 0.3s;
-}
 
-.navbar ul li a:hover {
-  color: #ff0000;
-}
+    /* Profile Picture */
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
 
-/* Container Styles */
-.container {
-  width: 100%;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-}
+    h1 {
+        font-size: 1.8rem;
+        margin: 10px 0;
+    }
 
-/* Section Titles */
-.section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-}
+    h2 {
+        font-size: 1.2rem;
+        color: #46f800;
+    }
 
-/* Featured Movie */
-.featured-movie img {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    /* Section Headings */
+    h3 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #e74c3c;
+        display: inline-block;
+    }
 
-/* Movie Grid */
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-}
+    /* About and Contact */
+    .about p,
+    .contact p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
 
-.movie-card img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .contact p strong {
+        display: inline-block;
+        width: 80px;
+    }
 
-.movie-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Skills and Language */
+    ul {
+        list-style: none;
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    ul li {
+        margin-bottom: 5px;
+    }
+
+    /* Right Panel */
+    .education ul,
+    .experience ul {
+        padding: 0;
+        list-style-type: disc;
+        margin-left: 20px;
+        font-size: 0.9rem;
+    }
+
+    .education ul li,
+    .experience ul li {
+        margin-bottom: 10px;
+    }
+
+    .education p,
+    .experience p {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .cv-container {
+            flex-direction: column;
+        }
+
+        .left-panel,
+        .right-panel {
+            width: 100%;
+        }
+
+        .left-panel {
+            text-align: center;
+        }
+    }
+
+    .contact1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .contact1 a {
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #7c7778;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .contact1 a:hover {
+        background-color: #aca6a6;
+    }
+
+    .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .skill ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .skill i {
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #3f3e3e;
+        padding: 10px;
+        border-radius: 10%;
+    }
+
+    .skill i:hover {
+        background-color: #4b4949;
+    }
+
+    /* Icon hover colors */
+    .fa-html5:hover {
+        background-color: #e34f26;
+        color: rgb(255, 115, 0);
+    }
+
+    .fa-css3-alt:hover {
+        background-color: #264de4;
+        color: #1572b6;
+    }
+
+    .fa-js:hover {
+        background-color: #f0db4f;
+        color: #ffd900;
+    }
+
+    .fa-php:hover {
+        background-color: #8892be;
+        color: #002efd;
+    }
+
+    .fa-wordpress:hover {
+        background-color: #21759b;
+        color: #7e0f0f;
+    }
+
+    .fa-python:hover {
+        background-color: #3776ab;
+        color: #02b7ff;
+    }
+
+    .fa-react:hover {
+        background-color: #61dbfb;
+        color: #0d98d8;
+    }
+
+    .fa-node-js:hover {
+        background-color: #3c873a;
+        color: #0ea309;
+    }
+
+    .fa-github:hover {
+        background-color: #24292e;
+        color: #d61f90;
+    }
+
+    .fa-git:hover {
+        background-color: #f34f29;
+        color: #f34f29;
+    }
+
+    /* Dark mode styles */
+    .dark-mode {
+        background-color: #121212;
+        color: #ccc;
+    }
+
+    .dark-mode .left-panel {
+        background-color: #1e1e1e;
+    }
+
+    .dark-mode .right-panel {
+        background-color: #222;
+    }
+
+    .dark-mode h3 {
+        border-bottom-color: #e74c3c;
+    }
+    .fa-tiktok:hover {
+
+        color: #000000;
+    }
+
+    .fa-facebook:hover {
+
+        color: #4400ff;
+    }
+
+    .fa-youtube:hover {
+
+        color: #ff0000;
+        transition: 0.1s;
+        
+    }
+
+    .fa-telegram:hover {
+
+        color: #2a46c3;
+    }
+    .download {
+        
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .download h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .download a {
+        text-align: center;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    .download img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid #2bbb0e;
+        margin-bottom: 15px;
+    }
+    .download .S2{
+        border: 3px solid #ff0000;
+    }
+.gg img{
+    border: 3px solid #ff0000;
+    
 }
-.movie-card img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.gg1 img{
+    border: 3px solid #ff0000;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.container-movei{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.container-movei a{
+    text-align: center;
+        color: #fff;
+        font-size: 3.5rem;
+
+}
+.container-movei i{
+    text-align: center;
+        color: #fff;
+
+}
+.gbox{
+    color: #0ea309;
+}
+.troll{
+    color: rgb(0, 38, 255);
+    
+}
+.troll1 img{
+    border: 3px solid #454fdf;
+}
+.scarlet{
+    color:red;
 }
   </style>
+</head>
 <body>
-  <nav class="navbar">
-    <a href="index.html" class="logo">Movies</a>
-    <ul>
-      <li><a href="#about">☰</a></li>
-    </ul>
-  </nav>
+<div class="container">
+        <div class="left-panel">
+            <div class="profile-pic">
+                <img src="https://i.pinimg.com/736x/23/9c/68/239c685c98ea5053a8df2a8757baa4b9.jpg" alt="Profile Picture">
+            </div>
+            <h1>Thourn Panha</h1>
+            <h2>Web Developer</h2>
 
-  <div class="container">
-    <h2 class="section-title">Featured Movie</h2>
-    <div class="featured-movie">
-      <a href="#">
-        <img src="https://i.pinimg.com/736x/ec/36/e2/ec36e2a469feb96657c2c87085d7a92f.jpg" alt="Featured Movie">
-      </a>
-    </div>
+            <section class="about">
+                <h3>About Me</h3>
+                <p>Enjoy learning about tech, famous cars, and also the art of repair and maintenance. Interests include taking photos, playing football, and volleyball.</p>
+            </section>
 
-    <h2 class="section-title">New Movies</h2>
-    <div class="movie-grid">
-      <div class="movie-card">
-        <a href="seson.html">
-          <img src="https://i.pinimg.com/474x/86/29/bf/8629bfc0abb2e33cd10213f0a636c586.jpg" alt="Movie 1">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="#">
-          <img src="https://i.pinimg.com/474x/c3/7f/2a/c37f2aa4a23a8096dddb8609b4a92a6f.jpg" alt="Movie 2">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="#">
-          <img src="https://i.pinimg.com/236x/ad/08/30/ad08302276fb39966aee4b6e0390fdab.jpg" alt="Movie 3">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="#">
-          <img src="https://i.pinimg.com/736x/e7/24/84/e724848d8161de85b571e6f8dc651c19.jpg" alt="Movie 4">
-        </a>
-      </div>
-        <div class="movie-card">
-    <a href="">
-      <img src="https://i.pinimg.com/736x/f8/a9/a6/f8a9a65c3d869583595f27d74fe30c93.jpg" alt="Movie 1">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/736x/44/90/2f/44902fa2ba6c23073373cfac4ed62cba.jpg" alt="Movie 2">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/736x/80/b4/d6/80b4d67cb9ca21dc8dbb3a0c0e42956d.jpg" alt="Movie 3">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/736x/b2/87/6e/b2876efdeba6f73d90e2e804e2b5036a.jpg" alt="Movie 4">
-    </a>
-  </div>
-        <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/736x/d5/a7/fd/d5a7fde77df55f3e305b118fb6089892.jpg" alt="Movie 1">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/736x/21/d3/ff/21d3ff0304fc4e5cb22b980f5af7412d.jpg" alt="movie 2">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/236x/ea/55/e2/ea55e2060362af30868b8eb492c7bced.jpg" alt="Movie 1">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/236x/46/9f/07/469f07f5100c92deb0a60a62eb26b3aa.jpg" alt="movie 2">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/236x/26/2e/ad/262ead1c8722967d22e5e60f24068dff.jpg" alt="Movie 1">
-        </a>
-      </div>
-      <div class="movie-card">
-        <a href="">
-          <img src="https://i.pinimg.com/236x/11/a7/e4/11a7e484636c75f534e3067d0e4af6aa.jpg" alt="movie 2">
-        </a>
-      </div>
-  </div>
-  <div class="featured-movie">
-  <a href="#">
-    <img src="https://i.pinimg.com/736x/cc/af/1a/ccaf1aa7913eaf8b51b3587112b92263.jpg" alt="Featured Movie">
-  </a>
+            <section class="contact">
+                <h3>Contact</h3>
+                <div class="contact1">
+                    <a href="https://www.tiktok.com/@nhoy_n?_t=ZS-8tBmMfw9ZiS&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://web.ftacebook.com/profile.php?id=100033854716313"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@Xai-qq"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://t.me/nhoy200"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h3>Skills</h3>
+                <div class="skill">
+                    <ul>
+                        <li><i class="fa-brands fa-html5">HTML</i></li>
+                        <li><i class="fa-brands fa-css3-alt">CSS</i></li>
+                        <li><i class="fa-brands fa-js">JavaScript</i></li>
+                        <li><i class="fa-brands fa-php">PHP</i></li>
+                        <li><i class="fa-brands fa-wordpress">WordPress</i></li>
+                        <li><i class="fa-brands fa-python">Python</i></li>
+                        <li><i class="fa-brands fa-react">React</i></li>
+                        <li><i class="fa-brands fa-node-js">Node.js</i></li>
+                        <li><i class="fa-brands fa-git">Git</i></li>
+                        <li><i class="fa-brands fa-github">GitHub</i></li>
+                        <li><i class="fa-brands fa-docker">Docker</i></li>
+                        <li><i class="fa-brands fa-linux">Linux</i></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="languages">
+                <h3>Language</h3>
+                <ul>
+                    <li>Khmer (Mother Tongue)</li>
+                    <li>English (Speaking, Listening, Writing: Reading Basic Level)</li>
+                </ul>
+            </section>
+            <div class="container-movei">
+                <h1>
+                    MOVEI
+                </h1>
+                <div class="box-movei">
+                    <a href="/movei-v2/index.html"><i class="fa-solid fa-clapperboard"></i></a>
+                </div>
+            </div>
+            -------------------------------------------------------------------------
+            <div class="download">
+                <h1>
+                    download Esign
+                </h1>
+                <a href="https://api.khoindvn.eu.org/0qvzM4">
+                    <img src="https://ipaomtk.com/wp-content/uploads/2023/03/esign-ipa.jpg" alt="">
+                </a>
+                <a href="https://api.khoindvn.eu.org/0qvzM4">
+                    <img src="https://ipaomtk.com/wp-content/uploads/2023/03/esign-ipa.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="download">
+                <h1>
+                    download <span class="scarlet">Scarlet</span>
+                </h1>
+                <div class="box">
+                <div class="gg">
+                <a href="#">
+                    <img src="https://usescarlet.com/icon.png" alt=""><span>SOON</span>
+                </a>
+                </div>
+                <div class="gg1">
+                <a href="#" >
+                    <img src="https://usescarlet.com/icon.png" alt="">
+                </a>
+               </div>
+                </div>
+
+
+                <div class="download">
+                    <h1>
+                        download <span class="gbox">GBOX</span>
+                    </h1>
+                    <div class="box">
+                    <div class="#">
+                    <a href="#">
+                        <img src="https://i.pinimg.com/736x/0b/99/d4/0b99d465ec90abaccc50cebbae351b23.jpg" alt=""><span>SOON</span>
+                    </a>
+                    </div>
+                    <div class="#">
+                    <a href="#" >
+                        <img src="https://i.pinimg.com/736x/0b/99/d4/0b99d465ec90abaccc50cebbae351b23.jpg" alt="">
+                    </a>
+                   </div>
+                    </div>
+                </div>
+
+
+                <div class="download">
+                    <h1>
+                        download <span class="troll">trollstore</span>
+                    </h1>
+                    <div class="box">
+                    <div class="troll1">
+                    <a href="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy8_byBXdIb2LwiwXFTHUsa_1GDJhqoJABDw&s" alt=""><span>SOON</span>
+                    </a>
+                    </div>
+                    <div class="troll1">
+                    <a href="#" >
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy8_byBXdIb2LwiwXFTHUsa_1GDJhqoJABDw&s" alt="">
+                    </a>
+                   </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script src="js/main.js">
+            // Toggle Dark Mode
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const darkModeToggle = document.createElement("button");
+    darkModeToggle.textContent = "Toggle Dark Mode";
+    darkModeToggle.style.position = "fixed";
+    darkModeToggle.style.bottom = "10px";
+    darkModeToggle.style.right = "10px";
+    darkModeToggle.style.padding = "10px 15px";
+    darkModeToggle.style.backgroundColor = "#333";
+    darkModeToggle.style.color = "#fff";
+    darkModeToggle.style.border = "none";
+    darkModeToggle.style.cursor = "pointer";
+    darkModeToggle.style.borderRadius = "5px";
+
+    darkModeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        darkModeToggle.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    });
+
+    document.body.appendChild(darkModeToggle);
+});
+
+// Animate Social Icons Hover Effect
+const socialIcons = document.querySelectorAll(".contact1 a");
+socialIcons.forEach(icon => {
+    icon.addEventListener("mouseover", () => {
+        icon.style.transform = "scale(1.2)";
+        icon.style.transition = "transform 0.2s";
+    });
+
+    icon.addEventListener("mouseout", () => {
+        icon.style.transform = "scale(1)";
+    });
+});
+
+// Scroll to Sections (if needed)
+document.querySelectorAll(".download a").forEach(anchor => {
+    anchor.addEventListener("click", e => {
+        e.preventDefault();
+        const targetId = anchor.getAttribute("href").slice(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});
+
+// Add Download Message for "Soon" Links
+const soonLinks = document.querySelectorAll("a[href='']");
+soonLinks.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        alert("This feature will be available soon!");
+    });
+});
+
+        </script>
 </div>
-<div class="movie-grid">
-  <div class="movie-card">
-    <a href="seson.html">
-      <img src="https://i.pinimg.com/236x/eb/2e/04/eb2e04353e0b8a3d3b7cea896f748081.jpg" alt="Movie 1">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/236x/33/89/92/33899204d273b184153e83ff087ef232.jpg" alt="Movie 2">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/236x/33/e8/46/33e846f6244162d123f8b5622c6ac8b7.jpg" alt="Movie 3">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/236x/69/9a/37/699a37b00ffea627700130c2a162dfc3.jpg" alt="Movie 4">
-    </a>
-  </div>
-    <div class="movie-card">
-<a href="">
-  <img src="https://i.pinimg.com/236x/99/ef/83/99ef837028463d4f940b63c2b288222b.jpg" alt="Movie 1">
-</a>
-</div>
-<div class="movie-card">
-<a href="#">
-  <img src="https://i.pinimg.com/236x/61/3f/23/613f2396de6c5bbb82c5fee450f1faf9.jpg" alt="Movie 2">
-</a>
-</div>
-<div class="movie-card">
-<a href="#">
-  <img src="https://i.pinimg.com/236x/b9/ef/0a/b9ef0ae3b860fd287e907491fddd560c.jpg" alt="Movie 3">
-</a>
-</div>
-<div class="movie-card">
-<a href="#">
-  <img src="https://i.pinimg.com/474x/0f/00/2a/0f002aa734c62067c3c566a8792625a4.jpg" alt="Movie 4">
-</a>
-</div>
-    <div class="movie-card">
-    <a href="">
-      <img src="https://i.pinimg.com/236x/82/90/06/829006f7d871f3039e4ded4e902d19a0.jpg" alt="Movie 1">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/236x/b7/36/3b/b7363bb9c17d12935ab73850cb3d87ec.jpg" alt="Movie 2">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="">
-      <img src="https://i.pinimg.com/236x/89/3c/27/893c274d7ce4fb7420f4563ca5f1963c.jpg" alt="Movie 1">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/474x/84/b6/26/84b62633bbfa6c082d8e11c91f06fca4.jpg" alt="Movie 2">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="">
-      <img src="https://i.pinimg.com/474x/b8/5c/3b/b85c3bc005fee0b952c8829720015ed7.jpg" alt="Movie 1">
-    </a>
-  </div>
-  <div class="movie-card">
-    <a href="#">
-      <img src="https://i.pinimg.com/236x/21/e9/8b/21e98b36f79823ac3dcd05c96dfce180.jpg" alt="Movie 2">
-    </a>
-  </div>
-</div>
-  </div>
-  <script src="main.main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
 </body>
 </html>
